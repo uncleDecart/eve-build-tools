@@ -1,7 +1,7 @@
 # EVE Build Tools
 
 This repository contains tools used for building parts of the [EVE](https://github.com/lf-edge/eve) ecosystem. The tools in here can
-be used directly, or can be runas part of a publicly available [Docker image](https://hub.docker.com/r/lfedge/eve-build-tools).
+be used directly, or can be run as part of a publicly available [Docker image](https://hub.docker.com/r/lfedge/eve-build-tools).
 There is a single image containing all of the tools.
 
 ## Build
