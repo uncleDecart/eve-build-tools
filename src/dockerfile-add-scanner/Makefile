@@ -1,7 +1,7 @@
 OUTDIR ?= bin
 OUTFILE ?= $(OUTDIR)/dockerfile-add-scanner
 
-.PHONY: build
+.PHONY: build test
 
 build: $(OUTFILE)
 
@@ -10,3 +10,7 @@ $(OUTFILE): $(OUTDIR)
 
 $(OUTDIR):
 	mkdir -p $@
+
+test:
+	go test -v ./...
+

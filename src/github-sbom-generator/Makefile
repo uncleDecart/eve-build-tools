@@ -10,3 +10,7 @@ $(OUTFILE): $(OUTDIR)
 
 $(OUTDIR):
 	mkdir -p $@
+
+test:
+	go test -v ./...
+

@@ -17,5 +17,9 @@ Each tool should be in its own directory, under [`src/`](./src/). This makes the
 with actual source under `src/`, and tooling, like the Makefile and Dockerfile, as well as documentation
 like the README, in the root directory.
 
-In addition, each tool should have a Makefile, with the target `build` to build locally.
+In addition, each tool should have a Makefile, with the following characteristics:
+
+* target `build` to build locally, where `OUTDIR` determines where compiled objects should go
+* target `test` to run local tests
+
 

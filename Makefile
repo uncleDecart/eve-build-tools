@@ -3,7 +3,7 @@ all: image
 IMAGE ?= lfedge/eve-build-tools:latest
 TOOLS ?= $(wildcard src/*)
 
-.PHONY: all image list tools
+.PHONY: all image list tools test FORCE
 
 image:
 	docker build -t $(IMAGE) .
@@ -15,5 +15,10 @@ tools: $(TOOLS)
 
 $(TOOLS): FORCE
 	make -C $@ build
+
+test:
+
+test-%: FORCE
+	make -C $% test
 
 FORCE:
