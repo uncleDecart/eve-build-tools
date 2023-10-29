@@ -1,18 +1,19 @@
 ---
 name: PR build
 on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - "main"
   pull_request:
     branches:
-      - "master"
-      - "[0-9]+.[0-9]+"
-      - "[0-9]+.[0-9]+-stable"
+      - "main"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
-  packages:
+  build:
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false

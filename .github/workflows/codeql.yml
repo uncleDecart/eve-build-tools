@@ -9,17 +9,11 @@ name: "CodeQL"
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
-      - "master"
-      - "[0-9]+.[0-9]+"
-      - "[0-9]+.[0-9]+-stable"
+      - "main"
   pull_request:
     # The branches below must be a subset of the branches above
     branches:
-      - "master"
-      - "[0-9]+.[0-9]+"
-      - "[0-9]+.[0-9]+-stable"
-  schedule:
-    - cron: '42 6 * * 2'
+      - "main"
 
 jobs:
   analyze:
@@ -33,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['go', 'python']
+        language: ['go']
 
     steps:
       - name: Checkout repository
